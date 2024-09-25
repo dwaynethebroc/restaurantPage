@@ -1,3 +1,6 @@
 import "./styles.css"
+import { generateHomepage } from "./home-page.js"
 
-console.log(index.js)
+generateHomepage();
+
+console.log("Test")
