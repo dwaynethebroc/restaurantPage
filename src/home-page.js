@@ -1,18 +1,23 @@
 export function generateHomepage() {
     //content Div
     const contentDiv = document.getElementById('content');
+    //clear previous contents
+    contentDiv.innerHTML = '';
 
     //title DIV
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('title');
+    titleDiv.classList.add('outer_container');
 
     //restaurant hours div
     const restaurantHoursDiv = document.createElement('div');
     restaurantHoursDiv.classList.add('restaurantHours');
+    restaurantHoursDiv.classList.add('outer_container');
 
     //location div
     const locationDiv = document.createElement('div');
     locationDiv.classList.add('location');
+    locationDiv.classList.add('outer_container');
     
     //title text
     const title = document.createElement('h1');
@@ -58,32 +63,3 @@ export function generateHomepage() {
     contentDiv.appendChild(restaurantHoursDiv);
     contentDiv.appendChild(locationDiv);
 }
-
-{/* <div class='title'>
-<h1>Human Restaurant</h1>
-</div>
-
-<div class='sub-title'>
-<p>Our restaurant is run by people, for people. We serve food that's edible and safe for bi-pod mammals to consume. We are definitely not aliens.
-</p>
-</div>
-
-<div class="hours">
-<h1>Hours</h1>
-<p>
-    Sunday: 8am - 8pm <br>
-    Monday: 6am - 6pm <br>
-    Tuesday: 6am - 6pm <br>
-    Wednesday: 6am - 6pm <br>
-    Thursday: 6am - 10pm <br>
-    Friday: 6am - 10pm <br>
-    Saturday: 8am - 10pm <br>
-</p>
-</div>
-
-<div class='address'>
-<h1>Our Address</h1>
-<p>
-    150 Cotton St, Pioche, NV 89043
-</p>
-</div> */}
