@@ -1,6 +1,6 @@
 import "./styles.css"
-import { generateHomepage } from "./home-page.js"
+import { generateHomepage, generateMenu } from "./home-page.js"
 
-generateHomepage();
+generateMenu();
 
 console.log("Test")

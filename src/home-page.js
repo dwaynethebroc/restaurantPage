@@ -1,3 +1,10 @@
+import baliIMG from "./images/bali.jpg"
+import BBQIMG from "./images/BBQ.jpg"
+import frenchIMG from "./images/french.JPG"
+import grainIMG from "./images/grain.jpg"
+import saltIMG from "./images/salt.jpg"
+import riceIMG from "./images/rice.jpg"
+
 function generateHomepage() {
     //content Div
     const contentDiv = document.getElementById('content');
@@ -64,7 +71,7 @@ function generateHomepage() {
     contentDiv.appendChild(locationDiv);
 }
 
-export function generateMenu() {
+function generateMenu() {
     //find content div
     const contentDiv = document.getElementById('content');
     // clear previous content
@@ -72,26 +79,26 @@ export function generateMenu() {
 
     //build a loop that creates a menu item with name, description, picture, and price from an array with class names that can be targeted and styled
     
-    menu_item_name_array = ["Balinese Cuisine", "French Food", "Grain Products", "Rice", "Bolivian Salt", "Barbeque"];
-    menu_item_description_array = [
+    const menu_item_name_array = ["Balinese Cuisine", "French Food", "Grain Products", "Rice", "Bolivian Salt", "Barbeque"];
+    const menu_item_description_array = [
         "We have very normal human food such as Balinese Cuisine",
         "French food is human food too",
-        "Grain products for people",
+        "People love grains, we have grain products",
         "Rice, the most common human food in the world",
         "Salt from Bolivia is important for nutrition",
         "Asado"
     ];
-    menu_item_picture_array = [
-        "./images/bali.jpg", 
-        "./images/french.JPG",
-        "./images/grain.jpg",
-        "./images/rice.jpg",
-        "./images/salt.jpg",
-        "./images/asado.jpg",
+    const menu_item_picture_array = [
+        baliIMG,
+        frenchIMG,
+        grainIMG,
+        riceIMG,
+        saltIMG,
+        BBQIMG
     ];
-    menu_item_price_array = ["$2", "$5", "$3", "$2", "$8", "$6"];
+    const menu_item_price_array = ["$2", "$5", "$3", "$2", "$8", "$6"];
 
-    for(i=0; i < menu_item_name.length; i++) {
+    for(let i=0; i < menu_item_name_array.length; i++) {
         const menuDiv = document.createElement('div');
         menuDiv.classList.add('menu_item');
         menuDiv.classList.add('outer_container');
@@ -103,25 +110,28 @@ export function generateMenu() {
         const menu_item_description = document.createElement('p');
         menu_item_description.classList.add('menu_item_description');
         menu_item_description.innerText = menu_item_description_array[i];
+
+        //picture
         
         const menu_item_picture = document.createElement('div');
-        menu_item_picture.classList.add('menu_item_picture');
-        menu_item_picture.innerHTML = '<img src=\"'+menu_item_picture_array[i]+'\">';
+        const img = document.createElement('img');
+        img.src = menu_item_picture_array[i];
+        menu_item_picture.appendChild(img);
         
         const menu_item_price = document.createElement('p');
         menu_item_price.classList.add('menu_item_price');
         menu_item_price.innerText = menu_item_price_array[i];
 
-        menuDiv.append(menu_item_name);
-        menuDiv.append(menu_item_description);
-        menuDiv.append(menu_item_picture);
-        menuDiv.append(menu_item_price);
+        menuDiv.appendChild(menu_item_name);
+        menuDiv.appendChild(menu_item_description);
+        menuDiv.appendChild(menu_item_picture);
+        menuDiv.appendChild(menu_item_price);
 
-        contentDiv.append(menuDiv);
-
-        i++
+        contentDiv.appendChild(menuDiv);
     }
 }
+
+export { generateHomepage, generateMenu }
 
 {/* <div class="menuDIV">
     <div class="menu_item_name">
