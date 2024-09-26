@@ -75,7 +75,7 @@ function generateMenu() {
     //find content div
     const contentDiv = document.getElementById('content');
     // clear previous content
-    contentDiv.innerText = ''
+    contentDiv.innerText = '';
 
     //build a loop that creates a menu item with name, description, picture, and price from an array with class names that can be targeted and styled
     
@@ -104,7 +104,7 @@ function generateMenu() {
         menuDiv.classList.add('outer_container');
         
         const menu_item_name = document.createElement('h1');
-        menu_item_name.classList.add('menu_item_name');
+        menu_item_name.classList.add('title');
         menu_item_name.innerText = menu_item_name_array[i];
         
         const menu_item_description = document.createElement('p');
@@ -131,22 +131,104 @@ function generateMenu() {
     }
 }
 
-export { generateHomepage, generateMenu }
+function generateCareers() {
+     //find content div
+    const contentDiv = document.getElementById('content');
+    // clear previous content
+    contentDiv.innerText = '';
 
-{/* <div class="menuDIV">
-    <div class="menu_item_name">
-        Name of item
-    </div>
+    // create responibilities div
+    const responsibilities = document.createElement('div');
+    responsibilities.classList.add('responsibilities');
+    responsibilities.classList.add('outer_container');
 
-    <div class='menu_item_description'>
-        description of food item
-    </div>
+    //create inner title div
 
-    <div class='menu_item_picture'>
-        picture of item
-    </div>
+    const title = document.createElement('div');
+    title.classList.add('title');
+    title.classList.add('outer_container');
 
-    <div class="menu_item_price">
-        The price
-    </div>
+    const title_text = document.createElement('h1');
+    title_text.innerText = "Ready to join us?";
+    title.appendChild(title_text);
+
+    const sub_title_text = document.createElement('p');
+    sub_title_text.innerText = "Do you have what it takes?";
+    title.appendChild(sub_title_text);
+
+    //create list div
+
+    const list = document.createElement("ul");
+
+    const list_item1 = document.createElement("li");
+    list_item1.innerText = "Make food for humans";
+
+    const list_item2 = document.createElement("li");
+    list_item2.innerText = "Be a person yourself";
+
+    const list_item3 = document.createElement("li");
+    list_item3.innerText = "Be willing to travel inter-dimensionally 5% of the time";
+
+    list.appendChild(list_item1);
+    list.appendChild(list_item2);
+    list.appendChild(list_item3);
+
+    responsibilities.appendChild(title);
+    responsibilities.appendChild(list);
+
+    //contact us div
+
+    const contact_us = document.createElement('div');
+    contact_us.classList.add('contact_us');
+    contact_us.classList.add('outer_container');
+
+    const title_contact_us = document.createElement('div');
+    title_contact_us.classList.add('title');
+    contact_us.appendChild(title_contact_us);
+
+    const title_text_contact_us = document.createElement('h1');
+    title_text_contact_us.innerText = "Get in touch with us";
+    title_contact_us.appendChild(title_text_contact_us);
+
+    const sub_title_text_contact_us = document.createElement('p');
+    sub_title_text_contact_us.innerText = "Find us at:";
+    title_contact_us.appendChild(sub_title_text_contact_us);
+
+    const contact_info = document.createElement("p");
+    contact_info.innerText = `
+        Phone: 666-666-666 \n 
+        Email: realEmailAddress@gmail.com \n 
+        Radio Frequency: 145.825 MHz`;
+    title_contact_us.appendChild(contact_info);
+
+    contentDiv.appendChild(responsibilities);
+    contentDiv.appendChild(contact_us);
+}
+
+export { generateHomepage, generateMenu, generateCareers }
+
+{/* <div class='responsibilities'>
+<div class="title">
+    <h1>Ready to join us?</h1>
+    <p>Do you have what it takes?</p>
+</div>
+
+<ul>
+    <li>Make food for humans</li>
+    <li>Be a person</li>
+    <li>Be willing to travel inter-dimensionally 5% of the time</li>
+</ul>
+</div>
+
+<div class='contact'>
+<div class="title">
+    <h1>Get in touch with us</h1>
+    <p>Find us at:</p>
+</div>
+
+<p>
+    Phone:
+    Email:
+    Radio Frequency: 
+</p>
 </div> */}
