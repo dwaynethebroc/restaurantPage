@@ -146,7 +146,7 @@ function generateCareers() {
 
     const title = document.createElement('div');
     title.classList.add('title');
-    title.classList.add('outer_container');
+
 
     const title_text = document.createElement('h1');
     title_text.innerText = "Ready to join us?";
